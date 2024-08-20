@@ -2,6 +2,9 @@
 (toggle-scroll-bar -1)
 (tool-bar-mode -1)
 
+(prefer-coding-system 'utf-8-unix)
+(set-language-environment "UTF-8")
+
 (set-face-attribute 'default nil :height 250)
 
 (setq backup-by-copying t)
