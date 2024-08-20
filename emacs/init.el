@@ -13,6 +13,9 @@
 (setq kept-old-versions 2)
 (setq version-control t)
 
+(eval-when-compile
+  (require 'use-package))
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
