@@ -12,6 +12,9 @@
 (setq kept-new-versions 6)
 (setq kept-old-versions 2)
 (setq version-control t)
+(setq package-user-dir (string-replace ".config" ".cache" package-user-dir))
+(setcar native-comp-eln-load-path
+        (string-replace ".config" ".cache" (car native-comp-eln-load-path)))
 
 (eval-when-compile
   (require 'use-package))
