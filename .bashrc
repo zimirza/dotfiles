@@ -2,27 +2,47 @@
 # ~/.bashrc
 #
 
-# If not running interactively, don't do anything
 [[ $- != *i* ]] && return
+
+ulimit -n 64000
+
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
+
+if ! shopt -oq posix; then
+  if [ -f /usr/share/bash-completion/bash_completion ]; then
+    . /usr/share/bash-completion/bash_completion
+  elif [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+  fi
+fi
 
 export LANG="ru_RU.UTF-8"
 export LC_ALL="ru_RU.UTF-8"
 
-alias ls='ls --color=auto'
-alias grep='grep --color=auto'
-alias vim="nvim"
-alias mv="mv -i"
-alias cp="cp -i"
-alias rm="rm -i"
-
 PS1='[\u@\h \W]\$ '
 
 export HISTCONTROL="ignoreboth:erasedups:cd:cd*:ls:ls*:exit"
+export HISTFILESIZE=2000
+export HISTSIZE=1000
+shopt -s histappend
+shopt -s cmdhist
+shopt -s dotglob
+shopt -s expand_aliases
+shopt -s checkwinsize
 
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_STATE_HOME="$HOME/.local/state"
+
+export TERM="st"
+export TERMINAL="st"
+
+case "$TERM" in
+    xterm-color|*-256color) color_prompt=yes;;
+esac
 
 export EDITOR="nvim"
 export VISUAL="nvim"
@@ -34,32 +54,13 @@ set show-mode-in-prompt on
 set vi-cmd-mode-string "\1\e[2 q\2cmd"
 set vi-ins-mode-string "\1\e[6 q\2ins"
 
-ulimit -n 64000
+[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
-### SHOPT
-shopt -s autocd # change to named directory
-shopt -s cdspell # autocorrects cd misspellings
-shopt -s cmdhist # save multi-line commands in history as single line
-shopt -s dotglob
-shopt -s histappend # do not overwrite history
-shopt -s expand_aliases # expand aliases
-shopt -s checkwinsize # checks term size when bash regains control
+export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/.local/share/bin"
+export PATH="$PATH:$HOME/.local/share/node_modules/bin"
 
-# ignore upper and lowercase when TAB completion
-bind "set completion-ignore-case on"
-
-PATH="$PATH:$HOME/.local/bin"
-PATH="$PATH:$HOME/.local/share/bin"
-. "$HOME/.cargo/env"
-PATH="$PATH:$HOME/.local/share/node_modules/bin"
-PATH="$PATH:$HOME/Programming/depot_tools"
-
-# gpg encryption
-# verify signature for isos
-alias gpg-check="gpg2 --keyserver-options auto-key-retrieve --verify"
-# receive the key of a developer
-alias gpg-retrieve="gpg2 --keyserver-options auto-key-retrieve --receive-keys"
-
+export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 export QT_AUTO_SCREEN_SET_FACTOR=0
 export QT_SCALE_FACTOR=1
 export QT_FONT_DPI=96
@@ -69,15 +70,15 @@ export GTK_THEME=Adwaita:dark
 export GTK2_RC_FILES=/usr/share/themes/Adwaita-dark/gtk-2.0/gtkrc
 export QT_STYLE_OVERRIDE=adwaita-dark
 
-export EMSDK_QUIET="1"
-. "$HOME/.config/emsdk/emsdk_env.sh"
+export PATH="~/perl5/bin${PATH:+:${PATH}}"; export PATH;
+export PERL5LIB="~/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+export PERL_LOCAL_LIB_ROOT="~/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+export PERL_MB_OPT="--install_base \"~/perl5\""; export PERL_MB_OPT;
+export PERL_MM_OPT="INSTALL_BASE=~/perl5"; export PERL_MM_OPT;
 
-alias musl-g++="g++"
-
-source <(kubectl completion bash)
-alias k=kubectl
-complete -o default -F __start_kubectl k
-
-# fnm
-export PATH="~/.local/share/fnm:$PATH"
-eval "`fnm env`"
+. "$HOME/.cargo/env"
+export FNM_PATH="~/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="$FNM_PATH:$PATH"
+  eval "`fnm env`"
+fi
