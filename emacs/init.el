@@ -1,12 +1,17 @@
 (menu-bar-mode -1)
 (toggle-scroll-bar -1)
 (tool-bar-mode -1)
+(scroll-bar-mode -1)
+(setq use-file-dialog nil)
+(setq use-dialog-box nil)
+(setq pop-up-windows nil)
 
 (prefer-coding-system 'utf-8-unix)
 (set-language-environment "UTF-8")
 
 (set-face-attribute 'default nil :height 100)
 
+(setq inhibit-splash-screen t)
 (setq backup-by-copying t)
 (setq backup-directory-alist `(("." . "~/.cache/emacs/backup")))
 (setq auto-save-file-name-transforms
@@ -18,6 +23,23 @@
 (setq package-user-dir (string-replace ".config" ".cache" package-user-dir))
 (setcar native-comp-eln-load-path
         (string-replace ".config" ".cache" (car native-comp-eln-load-path)))
+
+(global-set-key (kbd "C-=") 'text-scale-increase)
+(global-set-key (kbd "C--") 'text-scale-decrease)
+
+(setq-default line-spacing 0)
+(setq-default cursor-type '(box . 2))
+
+(delete-selection-mode 1)
+(electric-indent-mode -1)
+(global-auto-revert-mode t)
+(global-display-line-numbers-mode 1)
+(global-visual-line-mode t)
+
+(setq indent-tabs-mode nil)
+(setq tab-width 4)
+
+(setq c-basic-offset 4)
 
 (eval-when-compile
   (require 'use-package))
