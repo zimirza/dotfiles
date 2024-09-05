@@ -5,7 +5,7 @@
 (prefer-coding-system 'utf-8-unix)
 (set-language-environment "UTF-8")
 
-(set-face-attribute 'default nil :height 250)
+(set-face-attribute 'default nil :height 100)
 
 (setq backup-by-copying t)
 (setq backup-directory-alist `(("." . "~/.cache/emacs/backup")))
