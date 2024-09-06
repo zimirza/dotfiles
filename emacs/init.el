@@ -36,7 +36,7 @@
 (global-display-line-numbers-mode 1)
 (global-visual-line-mode t)
 (setq column-number-mode t)
-(setq toggle-truncate-lines nil)
+(toggle-truncate-lines nil)
 (setq mode-require-final-newline nil)
 (setq indent-tabs-mode nil)
 (setq tab-width 4)
