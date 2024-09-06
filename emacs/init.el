@@ -35,6 +35,7 @@
 (global-auto-revert-mode t)
 (global-display-line-numbers-mode 1)
 (global-visual-line-mode t)
+(setq column-number-mode t)
 
 (setq mode-require-final-newline nil)
 (setq indent-tabs-mode nil)
