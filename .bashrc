@@ -60,11 +60,3 @@ export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/.local/share/bin"
 
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
-export QT_AUTO_SCREEN_SET_FACTOR=0
-export QT_SCALE_FACTOR=1
-export QT_FONT_DPI=96
-export GDK_SCALE=1
-export GDK_DPI_SCALE=1
-export GTK_THEME=Adwaita:dark
-export GTK2_RC_FILES=/usr/share/themes/Adwaita-dark/gtk-2.0/gtkrc
-export QT_STYLE_OVERRIDE=adwaita-dark
