@@ -44,8 +44,8 @@ case "$TERM" in
     xterm-color|*-256color) color_prompt=yes;;
 esac
 
-export EDITOR="nvim"
-export VISUAL="nvim"
+export EDITOR="vi"
+export VISUAL="vi"
 
 set -o vi
 #bind -m vi-command 'Control-l: clear-screen'
