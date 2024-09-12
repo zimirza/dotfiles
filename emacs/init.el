@@ -38,7 +38,7 @@
 (setq column-number-mode t)
 (toggle-truncate-lines nil)
 (setq mode-require-final-newline nil)
-(setq indent-tabs-mode nil)
+(setq-default indent-tabs-mode nil)
 (setq tab-width 4)
 
 (setq c-basic-offset 4)
