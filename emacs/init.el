@@ -5,6 +5,7 @@
 (setq use-file-dialog nil)
 (setq use-dialog-box nil)
 (setq pop-up-windows nil)
+(global-unset-key (kbd "C-z"))
 
 (prefer-coding-system 'utf-8-unix)
 (set-language-environment "UTF-8")
