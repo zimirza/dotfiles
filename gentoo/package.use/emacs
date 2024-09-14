@@ -1,0 +1,1 @@
+app-editors/emacs USE="acl alsa cairo dbus gif gtk gui inotify jpeg png sound sqlite ssl svg tiff valgrind webp X xattr xft xpm zlib tree-sitter threads source json libxml2 gzip-el"
