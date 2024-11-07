@@ -21,47 +21,35 @@
 (setq kept-new-versions 6)
 (setq kept-old-versions 2)
 (setq version-control t)
-(setq package-user-dir (string-replace ".config" ".cache" package-user-dir))
 (setcar native-comp-eln-load-path
         (string-replace ".config" ".cache" (car native-comp-eln-load-path)))
 
 (global-set-key (kbd "C-=") 'text-scale-increase)
 (global-set-key (kbd "C--") 'text-scale-decrease)
 
-(setq-default line-spacing 0)
-(setq-default cursor-type '(box . 2))
+(setq line-spacing 0)
+(setq column-number-mode t)
+(global-display-fill-column-indicator-mode 1)
+(setq fill-column 80)
 
 (delete-selection-mode 1)
 (electric-indent-mode -1)
 (global-auto-revert-mode t)
 (global-display-line-numbers-mode 1)
-(global-visual-line-mode t)
+(setq-default truncate-lines t)
+(global-visual-line-mode -1)
 (setq column-number-mode t)
-(toggle-truncate-lines nil)
 (setq mode-require-final-newline nil)
 (setq-default indent-tabs-mode nil)
 (setq tab-width 4)
 
 (setq c-basic-offset 4)
 
-(eval-when-compile
-  (require 'use-package))
-
-(require 'package)
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
-(package-initialize)
-
-(use-package magit
-  :ensure t)
-
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-enabled-themes nil)
- '(package-selected-packages
-   '(magit)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
