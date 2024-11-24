@@ -42,8 +42,12 @@
 (setq mode-require-final-newline nil)
 (setq-default indent-tabs-mode nil)
 (setq tab-width 4)
-
 (setq c-basic-offset 4)
+(global-auto-revert-mode t)
+(global-display-line-numbers-mode t)
+(setq display-line-numbers-width 4)
+(setq-default indent-tabs-mode nil)
+(electric-indent-mode 0)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
