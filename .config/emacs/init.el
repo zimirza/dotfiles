@@ -21,8 +21,6 @@
 (setq kept-new-versions 6)
 (setq kept-old-versions 2)
 (setq version-control t)
-(setcar native-comp-eln-load-path
-        (string-replace ".config" ".cache" (car native-comp-eln-load-path)))
 
 (global-set-key (kbd "C-=") 'text-scale-increase)
 (global-set-key (kbd "C--") 'text-scale-decrease)
@@ -54,6 +52,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+)
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
