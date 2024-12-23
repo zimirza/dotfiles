@@ -49,6 +49,8 @@
 (setq-default indent-tabs-mode nil)
 (electric-indent-mode 0)
 
+(setq org-support-shift-select t)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
