@@ -29,8 +29,6 @@
 
 (setq line-spacing 0)
 (setq column-number-mode t)
-(global-display-fill-column-indicator-mode 1)
-(setq fill-column 80)
 
 (delete-selection-mode 1)
 (electric-indent-mode -1)
