@@ -21,6 +21,7 @@ export TERMINAL="st"
 
 export EDITOR="vi"
 export VISUAL="vi"
+export GIT_EDITOR="vi"
 
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
