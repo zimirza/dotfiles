@@ -12,7 +12,8 @@
 
 (set-face-attribute 'default nil :height 100)
 (set-frame-font "monospace 10" nil t)
-(add-to-list 'custom-theme-load-path "~/.config/emacs/emacs-grayscale-theme")
+(add-to-list 'load-path "~/.config/emacs/themes/emacs-grayscale-theme")
+(add-to-list 'custom-theme-load-path "~/.config/emacs/themes/emacs-grayscale-theme")
 
 (setq inhibit-splash-screen t)
 (setq backup-by-copying t)
