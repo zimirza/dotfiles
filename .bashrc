@@ -18,29 +18,15 @@ if ! shopt -oq posix; then
   fi
 fi
 
-export LANG="ru_RU.UTF-8"
-export LC_ALL="ru_RU.UTF-8"
-
-PS1='[\u@\h \W]\$ '
-
-export HISTCONTROL="ignoreboth:erasedups:cd:cd*:ls:ls*:exit"
-export HISTFILESIZE=2000
-export HISTSIZE=1000
 shopt -s histappend
 shopt -s cmdhist
 shopt -s dotglob
 shopt -s expand_aliases
 shopt -s checkwinsize
 
-export TERM="st"
-export TERMINAL="st"
-
 case "$TERM" in
     xterm-color|*-256color) color_prompt=yes;;
 esac
-
-export EDITOR="vi"
-export VISUAL="vi"
 
 set -o vi
 #bind -m vi-command 'Control-l: clear-screen'
@@ -50,8 +36,3 @@ set vi-cmd-mode-string "\1\e[2 q\2cmd"
 set vi-ins-mode-string "\1\e[6 q\2ins"
 
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
-
-export PATH="$PATH:$HOME/.local/bin"
-export PATH="$PATH:$HOME/.local/share/bin"
-
-export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
