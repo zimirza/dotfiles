@@ -50,6 +50,12 @@
 
 (setq org-support-shift-select t)
 
+(add-to-list 'load-path "~/.config/emacs/packages/dash.el")
+(add-to-list 'load-path "~/.config/emacs/packages/s.el")
+
+(require 'dash)
+(require 's)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

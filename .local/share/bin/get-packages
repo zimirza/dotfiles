@@ -5,3 +5,5 @@ set -xe
 mkdir -p ~/.config/emacs/themes
 mkdir -p ~/.config/emacs/packages
 git clone https://github.com/zimirza/emacs-grayscale-theme.git ~/.config/emacs/themes/emacs-grayscale-theme
+git clone https://github.com/magnars/dash.el ~/.config/emacs/packages/dash.el
+git clone https://github.com/magnars/dash.el ~/.config/emacs/packages/s.el
