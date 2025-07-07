@@ -52,9 +52,16 @@
 
 (add-to-list 'load-path "~/.config/emacs/packages/dash.el")
 (add-to-list 'load-path "~/.config/emacs/packages/s.el")
-
 (require 'dash)
 (require 's)
+
+(add-to-list 'load-path "~/.config/emacs/packages/llama")
+(add-to-list 'load-path "~/.config/emacs/packages/magit/lisp")
+(add-to-list 'load-path "~/.config/emacs/packages/with-editor/lisp")
+(add-to-list 'load-path "~/.config/emacs/packages/transient/lisp")
+(require 'with-editor)
+(require 'transient)
+(require 'magit)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
